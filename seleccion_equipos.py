@@ -11,6 +11,18 @@ def main(page: ft.Page):
             ft.dropdown.Option("Paris Saint Germain"),
             ], autofocus=True)
 
+    img = ft.Image(
+        src=f"Real Madrid.png",
+        width=100,
+        height=100,
+        fit=ft.ImageFit.CONTAIN,
+    )
+    
+    page.add(img)
     page.add(menu)
 
-ft.app(target=main)
+
+
+
+
+ft.app(target=main, assets_dir="Imagenes")

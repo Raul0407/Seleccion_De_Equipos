@@ -10,6 +10,7 @@ def main(page:ft.Page):
         height=100,
         fit=ft.ImageFit.CONTAIN,
     )
+    
     page.add(img)
 
 

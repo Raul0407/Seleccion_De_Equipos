@@ -2,6 +2,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title="Trabajo selección de equipo"
+    listaequipos = []
 
     def imagen(e):
         if menu.value=="Liverpool":

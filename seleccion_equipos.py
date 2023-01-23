@@ -3,7 +3,10 @@ import flet as ft
 def main(page: ft.Page):
     page.title="Trabajo selección de equipo"
     listaequipos = ["Real Madrid", "Liverpool", "Manchester City", "Bayern de Múnich", "Paris Saint Germain"]
-    
+    listaseleccionados = []
+    def funcionalidadboton(i):
+        listaseleccionados.append(menu.value)
+        print(listaseleccionados)
 
     def imagen(e):
         if menu.value=="Liverpool":
@@ -43,13 +46,8 @@ def main(page: ft.Page):
         fit=ft.ImageFit.CONTAIN,
     )
 
-    btn_añadir_equipo = ft.FloatingActionButton(icon=ft.icons.ADD)
+    btn_añadir_equipo = ft.FloatingActionButton(icon=ft.icons.ADD, on_click=funcionalidadboton)
     
     page.add(menu,img,btn_añadir_equipo)
-
-
-
-
-
 
 ft.app(target=main, assets_dir="Imagenes")

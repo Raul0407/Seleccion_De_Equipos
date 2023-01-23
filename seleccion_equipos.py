@@ -2,7 +2,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title="Trabajo selección de equipo"
-    listaequipos = []
+    listaequipos = ["Real Madrid", "Liverpool", "Manchester City", "Bayern de Múnich", "Paris Saint Germain"]
+    
 
     def imagen(e):
         if menu.value=="Liverpool":
@@ -24,13 +25,16 @@ def main(page: ft.Page):
             img.src="Paris Saint Germain.jpeg"
         page.update()
 
-    menu =  ft.Dropdown(label="Equipos",hint_text="Elige tu equipo",options=[
-            ft.dropdown.Option("Real Madrid"),
-            ft.dropdown.Option("Manchester City"),
-            ft.dropdown.Option("Liverpool"),
-            ft.dropdown.Option("Bayern de Múnich"),
-            ft.dropdown.Option("Paris Saint Germain"),
-            ], autofocus=True, on_change=imagen)
+    
+    
+    menu =  ft.Dropdown(label="Equipos",hint_text="Elige tu equipo", autofocus=True, on_change=imagen)
+    
+    
+    
+    
+    for e in listaequipos:
+        menu.options.append(ft.dropdown.Option(e))
+   
     
     img = ft.Image(
         src=f"d",

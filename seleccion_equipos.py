@@ -37,8 +37,10 @@ def main(page: ft.Page):
         height=300,
         fit=ft.ImageFit.CONTAIN,
     )
+
+    btn_añadir_equipo = ft.FloatingActionButton(icon=ft.icons.ADD)
     
-    page.add(menu,img)
+    page.add(menu,img,btn_añadir_equipo)
 
 
 

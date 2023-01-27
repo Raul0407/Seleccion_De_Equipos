@@ -6,9 +6,17 @@ def main(page: ft.Page):
     listaseleccionados = []
 
     lv = ft.ListView(expand=2, spacing=2, padding=2, auto_scroll=True)
-    #row = ft.Row(spacing=100, controls=[])
-    #ft.Icon(name=ft.icons.FAVORITE, color=ft.colors.PINK)])
     
+    def abrirFichero():
+        vEquiposFichero = []
+        with open('/home/raullm/Documentos/GitKraken/Seleccion_De_Equipos/fichero.txt', 'r') as f:
+            for linea in f:
+                vEquiposFichero.append(linea)
+                
+
+        print(vEquiposFichero)
+
+    abrirFichero()
 
     def funcionalidadboton(i):
         sel = menu.value
@@ -81,7 +89,7 @@ def main(page: ft.Page):
 
     btn_añadir_equipo = ft.FloatingActionButton(icon=ft.icons.ADD, on_click=funcionalidadboton)
 
-
+    
 
     page.add(menu,img,btn_añadir_equipo, lv)
 

@@ -12,9 +12,8 @@ def main(page: ft.Page):
         with open('/home/raullm/Documentos/GitKraken/Seleccion_De_Equipos/fichero.txt', 'r') as f:
             for linea in f:
                 vEquiposFichero.append(linea)
-                
-
-        print(vEquiposFichero)
+            f.close()        
+        return(vEquiposFichero)
 
     abrirFichero()
 

@@ -5,11 +5,13 @@ def main(page: ft.Page):
     #listaequipos = ["Real Madrid", "Liverpool", "Manchester City", "Manchester United", "Bayern de Múnich", "Paris Saint Germain", "Atletico de Madrid", "Arsenal", "FC Barcelona", "Borussia Dortmund"]
     listaseleccionados = []
 
-    lv = ft.ListView(expand=2, spacing=2, padding=2, auto_scroll=True)
+    lv = ft.ListView(expand=2, spacing=10, padding=10, auto_scroll=True)
     
     def abrirFichero():
         vEquiposFichero = []
-        f = open("/home/joseangelmartosplazas/Documentos/Seleccion_De_Equipos/Equipos.txt","r")
+        #/home/raullm/Documentos/GitKraken/Seleccion_De_Equipos/Equipos.txt
+        #/home/joseangelmartosplazas/Documentos/Seleccion_De_Equipos/Equipos.txt
+        f = open("Equipos.txt","r")
         for linea in f:
             lineasl = linea.replace("\n","")
             vEquiposFichero.append(lineasl)
@@ -22,7 +24,7 @@ def main(page: ft.Page):
         sel = menu.value
         if (listaseleccionados.count(sel) == 0):
             listaseleccionados.append(menu.value)
-            row = ft.Row(spacing=10, controls = [ft.Text(sel),ft.Image(width=20, height=20, src="Escudo.png")])
+            row = ft.Row(spacing=10, controls = [ft.Text(sel),ft.Image(width=20, height=20, src=f"Imagenes\{sel}.png")])
             lv.controls.append(row)
             print(listaseleccionados)
         else:
@@ -50,7 +52,7 @@ def main(page: ft.Page):
             img.src="Manchester United.png"
         elif menu.value=="Bayern de Múnich":
         
-            img.src="Bayern de munich.png"
+            img.src="Bayern de Múnich.png"
         elif menu.value=="Atletico de Madrid":
         
             img.src="Atletico de Madrid.png"
@@ -59,7 +61,7 @@ def main(page: ft.Page):
             img.src="Arsenal.png"
         elif menu.value=="FC Barcelona":
         
-            img.src="Barcelona.png"
+            img.src="FC Barcelona.png"
         elif menu.value=="Borussia Dortmund":
         
             img.src="Borussia Dortmund.png"

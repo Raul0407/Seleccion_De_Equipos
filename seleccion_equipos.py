@@ -2,20 +2,21 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title="Trabajo selección de equipo"
-    listaequipos = ["Real Madrid", "Liverpool", "Manchester City", "Manchester United", "Bayern de Múnich", "Paris Saint Germain", "Atletico de Madrid", "Arsenal", "FC Barcelona", "Borussia Dortmund"]
+    #listaequipos = ["Real Madrid", "Liverpool", "Manchester City", "Manchester United", "Bayern de Múnich", "Paris Saint Germain", "Atletico de Madrid", "Arsenal", "FC Barcelona", "Borussia Dortmund"]
     listaseleccionados = []
 
     lv = ft.ListView(expand=2, spacing=2, padding=2, auto_scroll=True)
     
     def abrirFichero():
         vEquiposFichero = []
-        with open('/home/raullm/Documentos/GitKraken/Seleccion_De_Equipos/fichero.txt', 'r') as f:
-            for linea in f:
-                vEquiposFichero.append(linea)
-            f.close()        
+        f = open("/home/joseangelmartosplazas/Documentos/Seleccion_De_Equipos/Equipos.txt","r")
+        for linea in f:
+            lineasl = linea.replace("\n","")
+            vEquiposFichero.append(lineasl)
+        f.close()        
+        print (vEquiposFichero)
         return(vEquiposFichero)
 
-    abrirFichero()
 
     def funcionalidadboton(i):
         sel = menu.value
@@ -69,11 +70,12 @@ def main(page: ft.Page):
         page.update()
 
     
-    
+    #Inicio programa principal
+
     menu =  ft.Dropdown(label="Equipos",hint_text="Elige tu equipo", autofocus=True, on_change=imagen)
     
     
-    
+    listaequipos = abrirFichero()
     
     for e in listaequipos:
         menu.options.append(ft.dropdown.Option(e))

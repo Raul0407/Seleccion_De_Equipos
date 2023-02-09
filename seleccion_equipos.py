@@ -72,10 +72,11 @@ def main(page: ft.Page):
         elif menu.value=="Borussia Dortmund":
         
             img.src="Borussia Dortmund.png"
-        else:
-            menu.value=="Paris Saint Germain"
+        elif menu.value=="Paris Saint Germain":
         
             img.src="Paris Saint Germain.png"
+        else:
+            img.src="ImagenNoDisponible.png"
         page.update()
 
     

@@ -9,8 +9,6 @@ def main(page: ft.Page):
     
     def abrirFichero():
         vEquiposFichero = []
-        #/home/raullm/Documentos/GitKraken/Seleccion_De_Equipos/Equipos.txt
-        #/home/joseangelmartosplazas/Documentos/Seleccion_De_Equipos/Equipos.txt
         f = open("Equipos.txt","r")
         for linea in f:
             lineasl = linea.replace("\n","")

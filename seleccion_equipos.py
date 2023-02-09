@@ -6,6 +6,12 @@ def main(page: ft.Page):
     listaseleccionados = []
 
     lv = ft.ListView(expand=2, spacing=10, padding=10, auto_scroll=True)
+
+    def añadirFichero(x):
+        p = open("Equipos_Seleccionados.txt", "w")
+        for i in listaseleccionados:
+            p.write(i+"/")
+        p.close()
     
     def abrirFichero():
         vEquiposFichero = []
@@ -65,10 +71,11 @@ def main(page: ft.Page):
         elif menu.value=="Borussia Dortmund":
         
             img.src="Borussia Dortmund.png"
-        else:
-            menu.value=="Paris Saint Germain"
+        elif menu.value=="Paris Saint Germain":
         
             img.src="Paris Saint Germain.png"
+        else:
+            img.src="ImagenNoDisponible.png"
         page.update()
 
     
@@ -91,9 +98,9 @@ def main(page: ft.Page):
     )
 
     btn_añadir_equipo = ft.FloatingActionButton(icon=ft.icons.ADD, on_click=funcionalidadboton)
+    btn_añadir_fichero = ft.FloatingActionButton(icon=ft.icons.ABC, on_click=añadirFichero)
+    row2 = ft.Row(spacing=10, controls=[btn_añadir_equipo, btn_añadir_fichero])
 
-    
-
-    page.add(menu,img,btn_añadir_equipo, lv)
+    page.add(menu,img, lv, row2)
 
 ft.app(target=main, assets_dir="Imagenes")

@@ -10,8 +10,7 @@ def main(page: ft.Page):
     def añadirFichero(x):
         p = open("Equipos_Seleccionados.txt", "w")
         for i in listaseleccionados:
-            p.write(i)
-            p.write(" ")
+            p.write(i+"/")
         p.close()
     
     def abrirFichero():
